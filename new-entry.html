@@ -33,13 +33,12 @@
 
         <!-- Tags -->
         <div class="mt-15 ml-8 flex gap-5" id="tags">
-            <p class="py-1 px-2 text-xs font-bold bg-neutral-400 rounded-xl">Thoughtful</p>
-            <button class="py-1 px-2 text-xs font-bold bg-neutral-200 rounded-xl transition ease-in-out
+            <button id="tag" class="py-1 px-2 text-xs font-bold bg-neutral-200 rounded-xl transition ease-in-out
             duration-100 delay-100 hover:bg-neutral-600 hover:text-Platinum">+ Add tag</button>
         </div>
 
         <!-- Input area and buttons -->
-        <textarea class="p-4 w-full h-64 mt-10 text-neutral-600 bg-neutral-50 rounded-md" placeholder="Begin your reflection..."
+        <textarea id="body" class="p-4 w-full h-64 mt-10 text-neutral-600 bg-neutral-50 rounded-md" placeholder="Begin your reflection..."
             style="resize:none"></textarea>
         <div class="mt-4 w-full flex justify-between text-sm text-neutral-600 font-bold">
             <div class="flex gap-2 items-center">
@@ -51,7 +50,7 @@
             <div class="flex gap-4 items-center">
                 <a href="index.html"><button class=" py-1 px-3 rounded md text-neutral-400 font-bold transition ease-in-out duration-100 delay-100 
                 hover:bg-neutral-400 hover:text-black">Discard</button></a>
-                <button class="py-1 px-3 bg-black rounded-md shadow-md text-Platinum font-bold
+                <button id="save" class="py-1 px-3 bg-black rounded-md shadow-md text-Platinum font-bold
                 transition ease-in-out duration-100 delay-100 hover:bg-neutral-100 hover:text-black">Save Entry</button>
             </div>
         </div>
@@ -72,10 +71,6 @@
             </div>
         </div>
     </footer>
-
-
-
-
     <script src="script.js"></script>
 </body>
 </html>
