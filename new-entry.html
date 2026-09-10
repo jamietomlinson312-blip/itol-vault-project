@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Entry</title>
+    <link rel="stylesheet" href="src/output.css">
+    <script src="https://kit.fontawesome.com/0f31ee50d3.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-neutral-100 font-nunito">
+    <header class="fixed top-0 left-0 w-full ">
+        <div class="p-7 mx-2 flex justify-between">
+            <div class="">
+                <h3 class="font-extrabold">The Digital Vellum</h3>
+            </div>
+            <div class="">
+                <div class="flex gap-4 items-center">
+                    <a href="vault.html" class="text-neutral-400 hover:font-bold">Archive</a>
+                    <a class="font-bold underline underline-offset-8">New Entry</a>
+                    <a href="index.html"><i class="fa-solid fa-circle-user" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Input -->
+    <section class="max-w-7/10 mt-30 mb-30 mx-auto">
+        <!-- Title -->
+        <div class="flex flex-col gap-4 pl-8 border-l-2">
+            <h3 class="font-bold text-neutral-400">Date - get from Temporal object</h3>
+            <input type="text" id="title" value="Untitled Reflection" class="p-2 text-5xl text-neutral-300 font-extrabold">
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-15 ml-8 flex gap-5" id="tags">
+            <p class="py-1 px-2 text-xs font-bold bg-neutral-400 rounded-xl">Thoughtful</p>
+            <button class="py-1 px-2 text-xs font-bold bg-neutral-200 rounded-xl transition ease-in-out
+            duration-100 delay-100 hover:bg-neutral-600 hover:text-Platinum">+ Add tag</button>
+        </div>
+
+        <!-- Input area and buttons -->
+        <textarea class="p-4 w-full h-64 mt-10 text-neutral-600 bg-neutral-50 rounded-md" placeholder="Begin your reflection..."
+            style="resize:none"></textarea>
+        <div class="mt-4 w-full flex justify-between text-sm text-neutral-600 font-bold">
+            <div class="flex gap-2 items-center">
+                <i class="fa-solid fa-image" style="color: rgb(181, 181, 181);"></i>
+                <p class="mr-3">Insert Memory</p>
+                <i class="fa-solid fa-lock" style="color: rgb(181, 181, 181);"></i>
+                <p>Private</p>
+            </div>
+            <div class="flex gap-4 items-center">
+                <a href="index.html"><button class=" py-1 px-3 rounded md text-neutral-400 font-bold transition ease-in-out duration-100 delay-100 
+                hover:bg-neutral-400 hover:text-black">Discard</button></a>
+                <button class="py-1 px-3 bg-black rounded-md shadow-md text-Platinum font-bold
+                transition ease-in-out duration-100 delay-100 hover:bg-neutral-100 hover:text-black">Save Entry</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-10">
+        <div class="p-3 mx-2 flex justify-between">
+            <div class="">
+                <h3 class="font-light text-sm">&copy 2026 My ITOL Vault. Designed for reflection.</h3>
+            </div>
+            <div class="text-neutral-400 text-xs">
+                <div class="flex gap-3 items-center">
+                    <a>Privacy</a>
+                    <a>Terms</a>
+                    <a>Archive</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

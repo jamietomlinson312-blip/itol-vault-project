@@ -9,14 +9,15 @@
 </head>
 <body class="bg-neutral-100 font-nunito">
     <header class="fixed top-0 left-0 w-full ">
-        <div class="p-3 mx-2 flex justify-between">
+        <div class="p-7 mx-2 flex justify-between">
             <div class="">
                 <h3 class="font-extrabold">My ITOL Vault</h3>
             </div>
             <div class="">
                 <div class="flex gap-3 items-center">
-                    <button class="py-1 px-2 text-xs text-Platinum bg-black rounded-md shadow-md">New Entry</button>
-                    <i class="fa-solid fa-circle-user" style="color: rgb(0, 0, 0);"></i>
+                    <a href= "new-entry.html" class="py-1 px-2 text-xs text-Platinum bg-black rounded-md shadow-md
+                     transition ease-in-out duration-100 delay-100 hover:bg-neutral-100 hover:text-black">New Entry</a>
+                    <a href="index.html"><i class="fa-solid fa-circle-user" style="color: rgb(0, 0, 0);"></i></a>
                 </div>
             </div>
         </div>
@@ -68,30 +69,26 @@
                 <i class="fa-regular fa-pen-to-square fa-2xl fa-width-auto" style="color: rgb(130, 130, 130);"></i>
                 <h3 class="text-lg font-extrabold">Feeling Inspired?</h3>
                 <p class="text-xs text-neutral-500">Your Vellum is waiting for its next entry.</p>
-                <a class="mt-2 font-bold underline">Start Writing Now</a>
+                <a href="new-entry.html" class="mt-2 font-bold underline">Start Writing Now</a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-        <footer class="mt-10">
-            <div class="p-3 mx-2 flex justify-between">
-        <div class="">
-            <h3 class="font-light text-sm">&copy 2026 My ITOL Vault. Designed for reflection.</h3>
-        </div>
-        <div class="text-neutral-400 text-xs">
-            <div class="flex gap-3 items-center">
-                <a>Privacy</a>
-                <a>Terms</a>
-                <a>Archive</a>
+    <footer class="mt-10">
+        <div class="p-3 mx-2 flex justify-between">
+            <div class="">
+                <h3 class="font-light text-sm">&copy 2026 My ITOL Vault. Designed for reflection.</h3>
+            </div>
+            <div class="text-neutral-400 text-xs">
+                <div class="flex gap-3 items-center">
+                    <a>Privacy</a>
+                    <a>Terms</a>
+                    <a>Archive</a>
+                </div>
             </div>
         </div>
-    </div>
-        </footer>
-    
-
-
-
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
