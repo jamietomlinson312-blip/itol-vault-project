@@ -27,13 +27,13 @@
     <section class="max-w-7/10 mt-30 mb-30 mx-auto">
         <!-- Title -->
         <div class="flex flex-col gap-4 pl-8 border-l-2">
-            <h3 class="font-bold text-neutral-400">Date - get from Temporal object</h3>
+            <h3 id="date" class="font-bold text-neutral-400"></h3>
             <input type="text" id="title" value="Untitled Reflection" class="p-2 text-5xl text-neutral-300 font-extrabold">
         </div>
 
         <!-- Tags -->
         <div class="mt-15 ml-8 flex gap-5" id="tags">
-            <button id="tag" class="py-1 px-2 text-xs font-bold bg-neutral-200 rounded-xl transition ease-in-out
+            <button id="add-tag" class="py-1 px-2 text-xs font-bold bg-neutral-200 rounded-xl transition ease-in-out
             duration-100 delay-100 hover:bg-neutral-600 hover:text-Platinum">+ Add tag</button>
         </div>
 
@@ -50,8 +50,10 @@
             <div class="flex gap-4 items-center">
                 <a href="index.html"><button class=" py-1 px-3 rounded md text-neutral-400 font-bold transition ease-in-out duration-100 delay-100 
                 hover:bg-neutral-400 hover:text-black">Discard</button></a>
-                <button id="save" class="py-1 px-3 bg-black rounded-md shadow-md text-Platinum font-bold
+                <a href="vault.html"><button id="save" class="py-1 px-3 bg-black rounded-md shadow-md text-Platinum font-bold
                 transition ease-in-out duration-100 delay-100 hover:bg-neutral-100 hover:text-black">Save Entry</button>
+            <button id="clear" class="py-1 px-3 bg-black rounded-md shadow-md text-Platinum font-bold
+                transition ease-in-out duration-100 delay-100 hover:bg-neutral-100 hover:text-black">Clear local storage</button></a>
             </div>
         </div>
     </section>
@@ -71,6 +73,6 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="new-item-script.js"></script>
 </body>
 </html>
