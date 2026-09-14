@@ -13,23 +13,27 @@ function displayPosts(){
         div2.classList = "flex gap-4 items-center";
         const date = document.createElement("p");
         date.classList = "text-netural-400 font-light";
-        const tags = document.createElement("p");
-        tags.classList = "py-1 px-2 text-xs text-Platinum font-bold bg-neutral-400 rounded-xl";
+        
+       
         const title = document.createElement("h1");
         title.classList = "text-3xl font-extrabold";
         const body = document.createElement("p");
         date.innerText = element.date; // get property values from the object
-        tags.innerText = element.tags; 
         title.innerText = element.title;
         body.innerText = element.body;
-        div2.appendChild(date);
-        div2.appendChild(tags);
-        div1.appendChild(div2);
+         div2.appendChild(date);
+        for (i=0; i<element.tags.length; i++){ // looping through the element.tags array 
+            const tags = document.createElement("p");// create p element and set styling
+            tags.classList = "py-1 px-2 text-xs text-Neutral-500 font-bold bg-neutral-300 rounded-sm";
+            tags.innerText = element.tags[i];
+            div2.appendChild(tags); // append to div2
+        }
+        div1.appendChild(div2); // append remaining items
         newCard.appendChild(div1);
         newCard.appendChild(title);
         newCard.appendChild(body);
         const currentSection = document.querySelector("#card-section");
-        currentSection.appendChild(newCard);
+        currentSection.appendChild(newCard); // add post card to the section
     });
     }  
 }

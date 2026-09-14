@@ -37,9 +37,13 @@ const save = document.querySelector("#save");
     const title = document.querySelector("#title").value; // pull title and body text 
     const body = document.querySelector("#body").value;
     const date = currentDate;
-    const tags = document.querySelectorAll("#tags");
-    console.log("tags object...", tags[0]["innerText"]);
-    const newPost = new Post(date, title, body, tags[0]["innerText"]);
+    const tags = document.querySelectorAll("#tag");
+    let tagList = [];
+    for (i=0; i<tags.length; i++){
+        //console.log(tags[i]["innerText"]);
+        tagList.push(tags[i]["innerText"]);
+    }
+    const newPost = new Post(date, title, body, tagList);
     newPost.addToList()
     console.log("current local storage.....", JSON.parse(localStorage.getItem("entries")));
 });
