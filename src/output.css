@@ -48,7 +48,6 @@
     --default-mono-font-family: var(--font-mono);
     --font-nunito: "Nunito", sans-serif;
     --color-Platinum: #EFF1F3;
-    --color-Slate-Grey: #6D8A96;
   }
 }
 @layer base {
@@ -260,6 +259,9 @@
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
+  .h-full {
+    height: 100%;
+  }
   .w-full {
     width: 100%;
   }
@@ -412,10 +414,6 @@
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-  .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .text-xs {
     font-size: var(--text-xs);

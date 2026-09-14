@@ -10,10 +10,11 @@ console.log(postArray);
 
 // Creating Post Class
 class Post {
-    constructor (date, title, body){
+    constructor (date, title, body, tags){
         this.date = date;
         this.title = title;
         this.body = body;
+        this.tags = tags;
     }
     addToList() {
         if (postArray === null){
@@ -32,26 +33,29 @@ class Post {
 // Event handler for 'save' button
 
 const save = document.querySelector("#save");
-if (save !== null){
     save.addEventListener("click", () => { // function to get user input data and create new object
     const title = document.querySelector("#title").value; // pull title and body text 
     const body = document.querySelector("#body").value;
     const date = currentDate;
-    const newPost = new Post(date, title, body);
-    //console.log("object....", newPost);
+    const tags = document.querySelectorAll("#tags");
+    console.log("tags object...", tags[0]["innerText"]);
+    const newPost = new Post(date, title, body, tags[0]["innerText"]);
     newPost.addToList()
     console.log("current local storage.....", JSON.parse(localStorage.getItem("entries")));
-})
-}
+});
+
+
+// Button to clear local storage
 
 const clear = document.querySelector("#clear");
-clear.addEventListener("click", window.localStorage.clear());
+clear.addEventListener("click", () => {
+    window.localStorage.clear()
+});
 
 
 // Event listener to add new tag
 
 const tag = document.querySelector("#add-tag")
-if (tag !== null){
     tag.addEventListener("click", () => {
    const userTag = prompt("Enter new tag:");
    const newTag = document.createElement("p");
@@ -61,6 +65,5 @@ if (tag !== null){
    newTag.appendChild(tagText);
    const currentTags = document.querySelector("#tags");
    currentTags.appendChild(newTag);
-   
-})
-}
+});
+
