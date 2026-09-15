@@ -1,10 +1,7 @@
-
-
-let currentDate = Temporal.Now.plainDateISO();
+let currentDate = Temporal.Now.plainDateISO(); // get current date
 document.getElementById("date").innerText = currentDate;
 
 //Retrieving array from local storage
-
 let postArray = JSON.parse(localStorage.getItem("entries"));
 console.log(postArray);
 
@@ -30,35 +27,7 @@ class Post {
     }
 }
 
-// Event handler for 'save' button
-
-const save = document.querySelector("#save");
-    save.addEventListener("click", () => { // function to get user input data and create new object
-    const title = document.querySelector("#title").value; // pull title and body text 
-    const body = document.querySelector("#body").value;
-    const date = currentDate;
-    const tags = document.querySelectorAll("#tag");
-    let tagList = [];
-    for (i=0; i<tags.length; i++){
-        //console.log(tags[i]["innerText"]);
-        tagList.push(tags[i]["innerText"]);
-    }
-    const newPost = new Post(date, title, body, tagList);
-    newPost.addToList()
-    console.log("current local storage.....", JSON.parse(localStorage.getItem("entries")));
-});
-
-
-// Button to clear local storage
-
-const clear = document.querySelector("#clear");
-clear.addEventListener("click", () => {
-    window.localStorage.clear()
-});
-
-
-// Event listener to add new tag
-
+// New tag button
 const tag = document.querySelector("#add-tag")
     tag.addEventListener("click", () => {
    const userTag = prompt("Enter new tag:");
@@ -71,3 +40,24 @@ const tag = document.querySelector("#add-tag")
    currentTags.appendChild(newTag);
 });
 
+// Event handler for 'save' button
+const save = document.querySelector("#save");
+    save.addEventListener("click", () => { // function to get user input data and create new object
+    const title = document.querySelector("#title").value; // pull title and body text 
+    const body = document.querySelector("#body").value;
+    const date = currentDate;
+    const tags = document.querySelectorAll("#tag");
+    let tagList = [];
+    for (i=0; i<tags.length; i++){ // loop through list of tags and push to tagList array
+        //console.log(tags[i]["innerText"]);
+        tagList.push(tags[i]["innerText"]);
+    }
+    const newPost = new Post(date, title, body, tagList); // create new instance of Post object
+    newPost.addToList() 
+});
+
+// Button to clear local storage
+const clear = document.querySelector("#clear");
+clear.addEventListener("click", () => {
+    window.localStorage.clear()
+});
