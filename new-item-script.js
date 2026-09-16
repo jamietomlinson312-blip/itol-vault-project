@@ -47,6 +47,7 @@ const save = document.querySelector("#save");
     const body = document.querySelector("#body").value;
     const date = currentDate;
     const tags = document.querySelectorAll("#tag");
+  
     let tagList = [];
     for (i=0; i<tags.length; i++){ // loop through list of tags and push to tagList array
         //console.log(tags[i]["innerText"]);

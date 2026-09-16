@@ -9,8 +9,8 @@
 </head>
 <body class="bg-neutral-100 font-nunito">
     <!-- Header section -->
-    <header class="fixed top-0 left-0 w-full ">
-        <div class="p-7 mx-2 flex justify-between">
+    <header class="fixed top-0 left-0 w-full">
+        <div class="p-7 mx-2 flex flex-col items-center gap-4 sm:flex-row justify-between">
             <div class="">
                 <h3 class="font-extrabold">The Digital Vellum</h3>
             </div>
@@ -25,15 +25,15 @@
     </header>
 
     <!-- Input -->
-    <section class="max-w-7/10 mt-30 mb-30 mx-auto">
+    <section class="max-w-9/10 mx-auto sm:max-w-7/10 mt-30 mb-30 mx-auto">
         <!-- Title -->
         <div class="flex flex-col gap-4 pl-8 border-l-2">
-            <h3 id="date" class="font-bold text-neutral-400"></h3>
-            <input type="text" id="title" value="Untitled Reflection" class="p-2 text-5xl text-neutral-300 font-extrabold">
+            <h3 id="date" class="text-xs sm:text-base font-bold text-neutral-400"></h3>
+            <input type="text" id="title" value="Untitled Reflection" class="p-2 text-xl sm:text-5xl text-neutral-300 font-extrabold">
         </div>
 
         <!-- Tags -->
-        <div class="mt-15 ml-8 flex gap-5">
+        <div class="mt-5 ml-2 sm:mt-15 sm:ml-8 flex gap-5">
             <button id="add-tag" class="py-1 px-2 text-xs font-bold bg-neutral-200 rounded-xl transition ease-in-out
             duration-100 delay-100 hover:bg-neutral-600 hover:text-Platinum">+ Add tag</button>
             
@@ -45,7 +45,7 @@
         <!-- Input area and buttons -->
         <textarea id="body" class="p-4 w-full h-64 mt-10 text-neutral-600 bg-neutral-50 rounded-md" placeholder="Begin your reflection..."
             style="resize:none"></textarea>
-        <div class="mt-4 w-full flex justify-between text-sm text-neutral-600 font-bold">
+        <div class="mt-4 w-full flex flex-col gap-6 items-center text-xs sm:flex-row sm:justify-between sm:text-sm text-neutral-600 font-bold">
             <div class="flex gap-2 items-center">
                 <i class="fa-solid fa-image" style="color: rgb(181, 181, 181);"></i>
                 <p class="mr-3">Insert Memory</p>
