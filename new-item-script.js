@@ -47,14 +47,23 @@ const save = document.querySelector("#save");
     const body = document.querySelector("#body").value;
     const date = currentDate;
     const tags = document.querySelectorAll("#tag");
-  
     let tagList = [];
     for (i=0; i<tags.length; i++){ // loop through list of tags and push to tagList array
-        //console.log(tags[i]["innerText"]);
         tagList.push(tags[i]["innerText"]);
     }
+
+    // Form validation
+    if (tagList.length == 0 && title == "" && body === ""){
+        alert("Please fill in both fields and select tag(s)")
+    } else if (tagList.length == 0 && title == ""){
+        alert("Please enter a title and select tag(s)")
+    } else if (tagList.length == 0){
+        alert("Please select a tag");
+    }
     const newPost = new Post(date, title, body, tagList); // create new instance of Post object
-    newPost.addToList() 
+    if (title != "" && body !="" && tagList.length != 0){
+        newPost.addToList() 
+    }
 });
 
 // Button to clear local storage
