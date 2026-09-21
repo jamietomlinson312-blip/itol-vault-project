@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", displayPosts);
 
 function displayPosts(){
-     let newArray = JSON.parse(localStorage.getItem("entries"));
+    let newArray = JSON.parse(localStorage.getItem("entries"));
     if (newArray){
         newArray.slice(-5).forEach((element, index) => {
 

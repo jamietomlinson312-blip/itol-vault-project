@@ -3,7 +3,6 @@ document.getElementById("date").innerText = currentDate;
 
 //Retrieving array from local storage
 let postArray = JSON.parse(localStorage.getItem("entries"));
-console.log(postArray);
 
 // Creating Post Class
 class Post {
@@ -13,32 +12,34 @@ class Post {
         this.body = body;
         this.tags = tags;
     }
+    // Method to retrieve array from localStorage and add to it, or create new lsit in localStorage if no data exists
     addToList() {
         if (postArray === null){
             postArray = [];
-             postArray.push(this)
-            //console.log("First item Array....", postArray);
+            postArray.push(this)
             localStorage.setItem("entries", JSON.stringify(postArray));
         } else {
-             postArray.push(this)
-            //console.log("all but first item Array....", postArray);
+            postArray.push(this)
             localStorage.setItem("entries", JSON.stringify(postArray));
         }
     }
 }
 
-// New tag button
+//New tag button
 const tag = document.querySelector("#add-tag")
     tag.addEventListener("click", () => {
-   const userTag = prompt("Enter new tag:");
-   const newTag = document.createElement("p");
-   newTag.classList = ("py-1 px-2 text-xs font-bold bg-neutral-400 rounded-xl");
-   newTag.setAttribute("id", "tag");
-   const tagText = document.createTextNode(userTag);
-   newTag.appendChild(tagText);
-   const currentTags = document.querySelector("#tags");
-   currentTags.appendChild(newTag);
-});
+    const userTag = prompt("Enter new tag:");
+    if (userTag != null){ // only attach tag if user enters a value
+         const newTag = document.createElement("p");
+        newTag.classList = ("py-1 px-2 text-xs font-bold bg-neutral-400 rounded-xl");
+        newTag.setAttribute("id", "tag");
+        const tagText = document.createTextNode(userTag);
+        newTag.appendChild(tagText);
+        const currentTags = document.querySelector("#tags");
+        currentTags.appendChild(newTag);
+        }
+   }
+); 
 
 // Event handler for 'save' button
 const save = document.querySelector("#save");
@@ -48,21 +49,17 @@ const save = document.querySelector("#save");
     const date = currentDate;
     const tags = document.querySelectorAll("#tag");
     let tagList = [];
-    for (i=0; i<tags.length; i++){ // loop through list of tags and push to tagList array
+    if (tags.length > 0){
+        for (i=0; i<tags.length; i++){                      
         tagList.push(tags[i]["innerText"]);
-    }
-
-    // Form validation
-    if (tagList.length == 0 && title == "" && body === ""){
-        alert("Please fill in both fields and select tag(s)")
-    } else if (tagList.length == 0 && title == ""){
-        alert("Please enter a title and select tag(s)")
-    } else if (tagList.length == 0){
-        alert("Please select a tag");
-    }
+    }}
     const newPost = new Post(date, title, body, tagList); // create new instance of Post object
-    if (title != "" && body !="" && tagList.length != 0){
-        newPost.addToList() 
+    if(tagList.length > 0 && title != "" && body != ""){ 
+        newPost.addToList(); // function only called if all fields are filled out
+        window.location.href = "index.html" // navigates to index page 
+    } else {
+        console.log("Post object....", newPost)
+        alert("ensure all fields are filled out properly"); // User alert if any fields are empty
     }
 });
 

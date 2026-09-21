@@ -1,7 +1,6 @@
 window.addEventListener("DOMContentLoaded", displayPosts);
 
 function displayPosts(){
-    console.log("window load...local storage...", JSON.parse(localStorage.getItem("entries")));
     let newArray = JSON.parse(localStorage.getItem("entries")); // getting the current array from local storage
     if (newArray){
         newArray.forEach(element => { // loop through array and create html elements and styling
